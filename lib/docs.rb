@@ -157,4 +157,17 @@ end
 
 # TODO: Verificar esto
 # require_relative 'docs/base'
-require_relative 'docs/tonejs'
+# require_relative 'docs/tonejs'
+register "Tone.js", :tonejs, {
+  base_url: "file:///#{Dir.pwd}/docs/tonejs/",
+  root_path: "index.html",
+  files: "**/*.html",
+  filter: [
+    Tonejs::CleanHtml,
+    Tonejs::Entries
+  ],
+  parser: :html,
+  search_index: true
+}
+
+require_relative "docs/filters/tonejs"

@@ -3,6 +3,7 @@ module Docs
     self.name = 'Tone.js'
     self.slug = 'tonejs'
     # self.repo = 'Tonejs/Tone.js'
+    # self.index_file = 'index.html'
 
     # Ubicación hacia la carpeta de tonejs
     def initialize

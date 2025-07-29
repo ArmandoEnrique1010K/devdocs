@@ -4,7 +4,7 @@ module Docs
       def call
         @doc = at_css('> div[id]') if at_css('> div[id]')
         # Remove the navigation header and footer and the lines underneath and above it
-        at_css('.header + hr').remove
+        # at_css('.header + hr').remove
         line_above = at_xpath('//div[@class="header"]/preceding::hr[1]')
         line_above.remove unless line_above.nil?
         css('.header').remove
