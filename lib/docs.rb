@@ -154,3 +154,7 @@ module Docs
     end
   end
 end
+
+# TODO: Verificar esto
+# require_relative 'docs/base'
+require_relative 'docs/tonejs'
