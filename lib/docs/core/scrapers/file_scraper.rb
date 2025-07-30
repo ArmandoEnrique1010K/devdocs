@@ -11,7 +11,9 @@ module Docs
       end
     end
 
-    self.base_url = 'http://localhost/'
+    # TODO: MODIFIQUE ALGO
+   self.base_url = 'http://localhost/'
+    # self.base_url = ''
 
     html_filters.push 'clean_local_urls'
 

@@ -1,13 +1,15 @@
-# Esta clase representa el doc "Tone.js" dentro del sistema
 module Docs
-  class Tonejs < Docs::Base
+  class Tonejs < Docs::FileScraper
     self.name = 'Tone.js'
     self.slug = 'tonejs'
-    # self.repo = 'Tonejs/Tone.js'
+    self.type = 'javascript'
 
     def initialize
       @root_path = 'docs/tonejs'
     end
+
+    filter 'tonejs/clean_html'
+    filter 'tonejs/entries'
 
     def index
       doc 'Tone.js Documentation', 'index.html'

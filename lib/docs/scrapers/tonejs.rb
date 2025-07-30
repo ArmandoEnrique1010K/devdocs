@@ -3,8 +3,8 @@ module Docs
     self.name = 'Tone.js'
     self.slug = 'tonejs'
     self.type = 'javascript'
-    # self.source = 'https://tonejs.github.io/docs/'
-    # self.root_path = 'docs/tonejs'  # Directorio local donde están los archivos HTML
+    # self.source = 'public/docs/tonejs'
+    # self.root_path = 'public/docs/tonejs'  # Directorio local donde están los archivos HTML
 
 
     html_filters.push 'tonejs/entries', 'tonejs/clean_html'
