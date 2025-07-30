@@ -1,24 +1,14 @@
-module Tonejs
-  class Entries < Docs::EntriesFilter
-    # Extracción de titulos
-    def get_name
-      at_css("h1, h2")&.text
-    end
+# Esto crea el módulo Docs::Tonejs y define la clase Entries dentro de él.
+module Docs
+  module Tonejs
+    class Entries < Docs::EntriesFilter
+      # aquí el contenido
+      # def self.root
+      #   Path.root.join('tonejs')
+      # end
 
-    # Este método ES OBLIGATORIO
-    def get_type
-      return unless file # seguridad ante archivos nulos
-
-      path = file.sub(%r{^.*?/tonejs/}, "") # extrae la ruta relativa como "classes/Player.html"
-
-      case path
-      when %r{\Aclasses/}     then "Class"
-      when %r{\Amodules/}     then "Module"
-      when %r{\Ainterfaces/}  then "Interface"
-      when %r{\Afunctions/}   then "Function"
-      when %r{\Atypes/}       then "Type"
-      when %r{\Avariables/}   then "Variable"
-      else "Guide" # para index.html u otras páginas sueltas
+      def get_name
+        at_css("h1, h2")&.text
       end
     end
   end
