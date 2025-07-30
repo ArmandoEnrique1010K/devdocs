@@ -44,7 +44,9 @@ class DocsCLI < Thor
   option :verbose, type: :boolean
   option :debug, type: :boolean
   def page(name, path = '')
-    unless path.empty? || path.start_with?('/')
+
+    # TODO: REALICE UNA MODIFICACIÓN AQUI, AUNQUE PARECE ALGO ILEGAL
+    unless path.empty? || path.start_with?('/', '\\') || (path =~ /^[A-Za-z]:\\/)
       return puts 'ERROR: [path] must be an absolute path.'
     end
 

@@ -20,10 +20,9 @@ module Docs
       end
 
       def get_type
-        # return 'Manual: Appendices' if name.start_with?('Appendix')
-        # return 'Manual: Indexes' if at_css('a[rel=up]').content.include?("Index")
-        # "Manual"
-        nil
+        return 'Manual: Appendices' if name.start_with?('Appendix')
+        return 'Manual: Indexes' if at_css('a[rel=up]').content.include?("Index")
+        "Manual"
       end
 
       def additional_entries

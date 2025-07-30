@@ -1,13 +1,13 @@
-# Define el módulo Tonejs dentro del namespace Docs para evitar conflictos de constantes
 module Docs
-  module Tonejs
-    class CleanHtml
-      def self.call(html)
-        # Se deja en blanco porque los archivos HTML ya estan limpios
-
-        # Aquí puedes limpiar el HTML: eliminar menús, footers, etc.
-        # at_css("header")&.remove
-        html
+  class Tonejs
+    class CleanHtmlFilter < Filter
+      def call
+        # Limpia etiquetas innecesarias y agrega IDs a títulos
+        at_css('header')&.remove
+        at_css('footer')&.remove
+        doc.css('h1, h2, h3').each do |heading|
+          heading['id'] = heading.text.parameterize
+        end
       end
     end
   end

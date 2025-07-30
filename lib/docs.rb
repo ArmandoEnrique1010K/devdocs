@@ -155,22 +155,22 @@ module Docs
   end
 end
 
-# require_relative 'docs/base'
+# # require_relative 'docs/base'
 
-# Incluir el archivo de filtros y el scraper
-require_relative "docs/tonejs"
-require_relative "docs/filters/tonejs"
-# require_relative 'filters/tonejs'
+# # Incluir el archivo de filtros y el scraper
+# require_relative "docs/tonejs"
+# require_relative "docs/filters/tonejs"
+# # require_relative 'filters/tonejs'
 
-# Registrar correctamente los filtros dentro del namespace Docs::Tonejs:
-register "Tone.js", :tonejs, {
-  base_url: "file:///#{Dir.pwd}/docs/tonejs/",
-  root_path: "index.html",
-  files: "**/*.html",
-  filter: [
-    Docs::Tonejs::CleanHtml,  # <- CORRECTO: Dentro del namespace Docs
-    Docs::Tonejs::Entries
-  ],
-  parser: :html,
-  search_index: true
-}
+# # Registrar correctamente los filtros dentro del namespace Docs::Tonejs:
+# register "Tone.js", :tonejs, {
+#   base_url: "file:///#{Dir.pwd}/docs/tonejs/",
+#   root_path: "index.html",
+#   files: "**/*.html",
+#   filter: [
+#     Docs::Tonejs::CleanHtml,  # <- CORRECTO: Dentro del namespace Docs
+#     Docs::Tonejs::Entries
+#   ],
+#   parser: :html,
+#   search_index: true
+# }
